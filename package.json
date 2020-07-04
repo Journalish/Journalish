@@ -12,7 +12,11 @@
   "dependencies": {
     "express": "^4.17.1",
     "keyv": "^4.0.1",
-    "@keyv/mongo": "^1.0.4"
+    "@keyv/mongo": "^1.0.4",
+    "@keyv/sqlite": "^2.0.2",
+    "@keyv/redis": "^2.1.2",
+    "@keyv/postgres": "^1.0.16",
+    "@keyv/mysql": "^1.1.4"
   },
   "engines": {
     "node": "12.x"
