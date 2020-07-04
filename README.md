@@ -10,4 +10,5 @@ One of my teachers had decided to go through my journal (private) because I said
 Then she decided to take pictures of my journal. Then she took away my computer privalages for a year.
 
 ### How does it store notes?
-I was going to use [Jsoning](https://support.glitch.com/t/jsoning-a-simple-key-value-json-based-persistent-lightweight-database/24575), however, database storage is a bit more reliant because Jsoning uses local files and Databases uses 
+I was going to use [Jsoning](https://support.glitch.com/t/jsoning-a-simple-key-value-json-based-persistent-lightweight-database/24575), however, database storage is a bit more reliable [Read more here](https://www.quora.com/What-is-the-difference-between-a-file-system-and-a-database/answer/Christian-Smith-2).
+It currently uses [keyv](https://www.npmjs.com/package/keyv), which allows 6 diffrent da
