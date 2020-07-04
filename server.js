@@ -14,7 +14,11 @@ app.get("/", (request, res) => {
 });
 app.post("/create", (req, res) => {
   var text = req.query.text;
-  var body = req.query.text;
+  var body = req.query.body;
+  if (!text || !body) {
+  res.status(403).end('All fields are required')} else {
+    
+  }
 });
 const listener = app.listen(process.env.PORT, () => {
   console.log("MyJournal is runnning on port " + listener.address().port);
