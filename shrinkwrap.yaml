@@ -8,6 +8,7 @@ dependencies:
   helmet: 3.23.3
   hpp: 0.2.3
   keyv: 4.0.1
+  randomstring: 1.1.5
 packages:
   /@keyv/mongo/1.1.0:
     dependencies:
@@ -94,6 +95,12 @@ packages:
     dev: false
     resolution:
       integrity: sha1-ml9pkFGx5wczKPKgCJaLZOopVdI=
+  /array-uniq/1.0.2:
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-X8w3OSB3VyPP1k1lxkvvU7+eum0=
   /balanced-match/1.0.0:
     dev: false
     resolution:
@@ -1026,6 +1033,13 @@ packages:
       node: '>=0.6'
     resolution:
       integrity: sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+  /randomstring/1.1.5:
+    dependencies:
+      array-uniq: 1.0.2
+    dev: false
+    hasBin: true
+    resolution:
+      integrity: sha1-bfBij3XL1ZMpMNn+OrTpVqGFGMM=
   /range-parser/1.2.1:
     dev: false
     engines:
@@ -1412,3 +1426,4 @@ specifiers:
   helmet: ^3.23.3
   hpp: ^0.2.3
   keyv: ^4.0.1
+  randomstring: ^1.1.5
