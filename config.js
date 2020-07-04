@@ -1,3 +1,4 @@
 module.exports = {
-  brand: "OpenRadio"
+  brand: "OpenRadio",
+  dburl: ""
 };

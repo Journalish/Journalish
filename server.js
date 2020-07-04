@@ -4,7 +4,7 @@ const config = require("./config.js");
 const Keyv = require('keyv');
 const title = new Keyv('redis://user:pass@localhost:6379', { namespace: 'users' });
 const body = new Keyv('redis://user:pass@localhost:6379', { namespace: 'users' });
-
+const  date = new Keyv('redis://user:pass@localhost:6379', { namespace: 'users' });
 app.disable("x-powered-by");
 
 app.use(express.static("public"));
