@@ -1,11 +1,12 @@
+// Require Keyv
 const Keyv = require('keyv');
+keyv.on('error', err => console.log('Connection Error', err));
+const keyv = new Keyv();
 function find (id){
-  db[id]
+  
 }
 function create (text, id){
-  var id = Math.floor((Math.random() * 1000000) + 1);
-  database.set(id, text);
-  return id
+keyv.set('foo', 'never expires')
 }
 console.log(create("lol"))
 
