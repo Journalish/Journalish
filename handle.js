@@ -1,14 +1,8 @@
-/* Do some fancy databasing*/
-let jsoning = require('jsoning');
-let database = new jsoning(__dirname + "/notes.json");
-let all = database.all();
-var db1 = JSON.stringify(all);
-var db = JSON.parse(db1)
-
+const Keyv = require('keyv');
 function find (id){
   db[id]
 }
-function create (text){
+function create (text, id){
   var id = Math.floor((Math.random() * 1000000) + 1);
   database.set(id, text);
   return id
