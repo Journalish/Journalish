@@ -5,7 +5,6 @@ const config = require("./config.js");
 const Keyv = require("keyv");
 const title = new Keyv(config.dburl, { namespace: config.prefix + "title" });
 const body = new Keyv(config.dburl, { namespace: config.prefix + "body" });
-const date = new Keyv(config.dburl, { namespace: config.prefix + "date" });
 app.disable("x-powered-by");
 
 app.use(express.static("public"));
@@ -29,10 +28,12 @@ app.post("/find", (req, res) => {
       );
   } else {
     async function find (id){
-      // Find id and server to user
-
+     var title2 = await title.get(id); 
+    var body2 = await body.get(id); 
+res.json('{"title": "'+ title2)
       
     }
+    find(req.query.id)
   }
 });
 app.post("/create", (req, res) => {

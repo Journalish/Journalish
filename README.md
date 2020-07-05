@@ -12,7 +12,7 @@ It currently uses [keyv](https://www.npmjs.com/package/keyv), which allows 6 dif
 
 ### Databases
 You can place the Connection URL at config.js under `dburl`
-Databases Supported: 
+Databases Supported (directly): 
 - Redis (redis://user:pass@localhost:6379)
 - Mongodb (mongodb://user:pass@localhost:27017/dbname)
 - Sqlite (sqlite://path/to/database.sqlite)
