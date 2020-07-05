@@ -28,8 +28,11 @@ app.post("/find", (req, res) => {
         '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
       );
   } else {
-    res.json('')
-    
+    async function find (id){
+      // Find id and server to user
+
+      
+    }
   }
 });
 app.post("/create", (req, res) => {
