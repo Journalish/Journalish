@@ -23,3 +23,7 @@ Databases Supported (directly):
 ### API/Designing Clients
 The API docs can be found under API.md
 As of clients, I didn't make one yet. 
+
+### Dependencies/Packages
+Express- To host the Journal
+Keyv - Store Entries

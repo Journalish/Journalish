@@ -1,11 +1,12 @@
-# Create ("/create")
+### Create ("/create")
 Method: POST
 Paramaters:
 - "password" - Contains the password for the journal (Required)
 - "body" - Contains the Text of the journal entry
 - "title" - Contains the Title of the journal entry (Required)
+
 On success, the ID will be stored under "result"
-# Find ("find")
+### Find ("find")
 Method: POST
 Paramaters: 
 - "password" - Contains the password of the journal

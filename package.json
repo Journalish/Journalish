@@ -1,7 +1,7 @@
 {
   "name": "myjournal",
   "version": "0.1.0",
-  "description": "It's My Journal, not yours!",
+  "description": "Take back your privacy and prevent snoopers (with a lock)",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
