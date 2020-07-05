@@ -1,7 +1,7 @@
 module.exports = {
-  brand: "OpenRadio",
   dburl: "",
   prefix: "mj",
-  password: "",
-  "idtype": "numeric"
+  password: "test",
+  idtype: "numeric",
+  length: 7
 };

@@ -18,24 +18,29 @@ app.post("/create", (req, res) => {
     res
       .status(403)
       .end(
-        '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": ""}'
+        '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": null}'
       );
   } else if (req.query.password !== config.password) {
     res
       .status(403)
       .end(
-        '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": ""}'
+        '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
       );
   } else {
     res.status(200);
+    var id = randomstring.generate({
+      length: config.idlength || 7,
+      charset: config.idtype
+    });
     async function create(title, text) {
-      var id = randomstring.generate({ length: 12, charset: config.idtype });
       await title.set(id, title);
       await body.set(id, text);
-      return id
+      return id;
     }
-    var idgen = create(req.query.title, req.query.body)
-    res.end('{"success": true, "error": "", "code": "OK", "result": ""}');
+    var idgen = create(req.query.title, req.query.body);
+    res.end(
+      '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
+    );
   }
 });
 const listener = app.listen(process.env.PORT, () => {
