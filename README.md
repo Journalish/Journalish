@@ -1,4 +1,4 @@
-# MyJournal
+# Journalish
 
 Take back your privacy and prevent snooping (somewhat)
 
@@ -30,5 +30,3 @@ As of clients, I didn't make one yet.
 - @keyv/package - Adds support for mutiple Databases (See the `databases` section)
 - [helmet](https://www.npmjs.com/package/helmet) - Hides x-powered-by to slow down hacking 
 - [hpp](https://www.npmjs.com/package/hpp) - protect against HTTP Parameter Pollution attacks
-
-### Future Plans
