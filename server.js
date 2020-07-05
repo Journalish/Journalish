@@ -30,7 +30,7 @@ app.post("/find", (req, res) => {
     async function find (id){
      var title2 = await title.get(id); 
     var body2 = await body.get(id); 
-res.json('{"title": "'+ title2)
+res.json('{"title": "'+ title2 +'", "body"')
       
     }
     find(req.query.id)
