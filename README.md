@@ -21,4 +21,4 @@ Databases Supported:
 - Sqlite (sqlite://path/to/database.sqlite)
 - Postgresql (postgresql://user:pass@localhost:5432/dbname)
 - MySQL/MariaDB (mysql://user:pass@localhost:3306/dbname)
-- Memory (Leave Blank) (Only use for testing, It clears everytime you restart the app.)
+- Memory (Leave Blank) (Only use for testing, It clears everytime you restart the app./ Don't use on Glitch)

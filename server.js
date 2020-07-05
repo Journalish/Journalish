@@ -14,9 +14,7 @@ app.get("/", (request, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 app.post("/create", (req, res) => {
-  var text = req.query.text;
-  var body = req.query.body;
-  if (!text || !body) {
+  if (!req.query.title || !req.query.body) {
     res
       .status(403)
       .end(
@@ -29,8 +27,14 @@ app.post("/create", (req, res) => {
         '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": ""}'
       );
   } else {
-    res.status(200); 
-    
+    res.status(200);
+    async function create(title, text) {
+      var id = randomstring.generate({ length: 12, charset: config.idtype });
+      await title.set(id, title);
+      await body.set(id, text);
+      return id
+    }
+    var idgen = create(req.query.title, req.query.body)
     res.end('{"success": true, "error": "", "code": "OK", "result": ""}');
   }
 });
