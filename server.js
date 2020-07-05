@@ -17,9 +17,21 @@ app.post("/create", (req, res) => {
   var text = req.query.text;
   var body = req.query.body;
   if (!text || !body) {
-    res.status(403).end("All fields are required");
+    res
+      .status(403)
+      .end(
+        '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": ""}'
+      );
   } else if (req.query.password !== config.password) {
-    res.status(403).end('{"success": false, "error": "Wrong Password", "code": "Incorrect_Password"}');
+    res
+      .status(403)
+      .end(
+        '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": ""}'
+      );
+  } else {
+    res
+      .status(200)
+      .end('{"success": true, "error": "", "code": "OK", "result": ""}');
   }
 });
 const listener = app.listen(process.env.PORT, () => {
