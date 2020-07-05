@@ -17,10 +17,9 @@ app.post("/create", (req, res) => {
   var text = req.query.text;
   var body = req.query.body;
   if (!text || !body) {
-  res.status(403).end('All fields are required')} else {
-    async function create(text, body){
-      await title.set('', 'users')
-    }
+    res.status(403).end("All fields are required");
+  } else if (req.query.password !== config.password) {
+    res.status(403).end('{"success": false, "error": "Wrong Password", "code": "Incorrect_Password"}');
   }
 });
 const listener = app.listen(process.env.PORT, () => {
