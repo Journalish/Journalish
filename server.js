@@ -10,20 +10,39 @@ app.disable("x-powered-by");
 
 app.use(express.static("public"));
 
-app.get("/", (request, res) => {
+app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
-app.post("/create", (req, res) => {
+
+app.post("/find", (req, res) => {
   if (!req.query.title || !req.query.body) {
     res
       .status(403)
-      .end(
+      .json(
         '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": null}'
       );
   } else if (req.query.password !== config.password) {
     res
       .status(403)
-      .end(
+      .json(
+        '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
+      );
+  } else {
+    res.json('')
+    
+  }
+});
+app.post("/create", (req, res) => {
+  if (!req.query.title || !req.query.body) {
+    res
+      .status(403)
+      .json(
+        '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": null}'
+      );
+  } else if (req.query.password !== config.password) {
+    res
+      .status(403)
+      .json(
         '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
       );
   } else {
@@ -38,7 +57,7 @@ app.post("/create", (req, res) => {
       return id;
     }
     var idgen = create(req.query.title, req.query.body);
-    res.end(
+    res.json(
       '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
     );
   }
