@@ -25,5 +25,8 @@ The API docs can be found under API.md
 As of clients, I didn't make one yet. 
 
 ### Dependencies/Packages
-Express- To host the Journal
-Keyv - Store Entries
+- [express](https://www.npmjs.com/package/express) - To host the Journal
+- [keyv](https://www.npmjs.com/package/keyv) - Store Entries
+- @keyv/package - Adds support for mutiple Databases (See the `databases` section)
+- [helmet](https://www.npmjs.com/package/helmet) - Hides x-powered-by to slow down hacking 
+- [hpp](https://www.npmjs.com/package/hpp) - protect against HTTP Parameter Pollution attacks
