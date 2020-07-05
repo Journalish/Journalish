@@ -19,3 +19,7 @@ Databases Supported (directly):
 - Postgresql (postgresql://user:pass@localhost:5432/dbname)
 - MySQL/MariaDB (mysql://user:pass@localhost:3306/dbname)
 - Memory (Leave Blank) (Only use for testing, It clears everytime you restart the app)
+
+### API/Designing Clients
+The API docs can be found under API.md
+As of clients, I didn't make one yet. 

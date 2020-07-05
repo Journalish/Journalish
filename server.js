@@ -30,18 +30,18 @@ app.post("/find", (req, res) => {
     async function find (id){
      var title2 = await title.get(id); 
     var body2 = await body.get(id); 
-res.json('{"title": "'+ title2 +'", "body"')
+res.json('{"title": "'+ title2 +'", "body": "' + body2 + '", "id": "'+ id + '"')
       
     }
     find(req.query.id)
   }
 });
 app.post("/create", (req, res) => {
-  if (!req.query.title || !req.query.body) {
+  if (!req.query.title) {
     res
       .status(403)
       .json(
-        '{"success": false, "error": "All FIelds are Required.", "code": "ALL_FIELDS_REQUIRED", "result": null}'
+        '{"success": false, "error": "At least the title is required.", "code": "TITLE_NOT_FOUND", "result": null}'
       );
   } else if (req.query.password !== config.password) {
     res
@@ -66,6 +66,6 @@ app.post("/create", (req, res) => {
     );
   }
 });
-const listener = app.listen(process.env.PORT, () => {
+const listener = app.listen(config.port, () => {
   console.log("MyJournal is runnning on port " + listener.address().port);
 });
