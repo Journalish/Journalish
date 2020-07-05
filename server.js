@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+var randomstring = require("randomstring");
 const config = require("./config.js");
 const Keyv = require("keyv");
 const title = new Keyv(config.dburl, { namespace: config.prefix + "title" });
@@ -17,7 +18,9 @@ app.post("/create", (req, res) => {
   var body = req.query.body;
   if (!text || !body) {
   res.status(403).end('All fields are required')} else {
-    
+    async function create(text, body){
+      await title.set('', 'users')
+    }
   }
 });
 const listener = app.listen(process.env.PORT, () => {
