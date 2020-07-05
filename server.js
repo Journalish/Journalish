@@ -29,9 +29,9 @@ app.post("/create", (req, res) => {
         '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": ""}'
       );
   } else {
-    res
-      .status(200)
-      .end('{"success": true, "error": "", "code": "OK", "result": ""}');
+    res.status(200); 
+    
+    res.end('{"success": true, "error": "", "code": "OK", "result": ""}');
   }
 });
 const listener = app.listen(process.env.PORT, () => {

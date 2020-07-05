@@ -14,7 +14,7 @@ I was going to use [Jsoning](https://support.glitch.com/t/jsoning-a-simple-key-v
 It currently uses [keyv](https://www.npmjs.com/package/keyv), which allows 6 diffrent databases
 
 ### Databases
-You can place the Connection URL at .env under `CONNECTIONURL=`
+You can place the Connection URL at config.js under `dburl`
 Databases Supported: 
 - Redis (redis://user:pass@localhost:6379)
 - Mongodb (mongodb://user:pass@localhost:27017/dbname)
