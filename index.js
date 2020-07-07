@@ -27,13 +27,20 @@ app.get("/find", (req, res) => {
         '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
       );
   } else {
-    async function find (id){
-     var title2 = await title.get(id); 
-    var body2 = await body.get(id); 
-res.json('{"title": "'+ title2 +'", "body": "' + body2 + '", "id": "'+ id + '"')
-      
+    async function find(id) {
+      var title2 = await title.get(id);
+      var body2 = await body.get(id);
+      res.json(
+        '{"title": "' +
+          title2 +
+          '", "body": "' +
+          body2 +
+          '", "id": "' +
+          id +
+          '"'
+      );
     }
-    find(req.query.id)
+    find(req.query.id);
   }
 });
 app.post("/create", (req, res) => {
@@ -44,6 +51,30 @@ app.post("/create", (req, res) => {
         '{"success": false, "error": "At least the title is required.", "code": "TITLE_NOT_FOUND", "result": null}'
       );
   } else if (req.query.password !== config.password) {
+    res
+      .status(403)
+      .json(
+        '{"success": false, "error": "Wrong Password.", "code": "INCORRECT_PASSWORD", "result": null}'
+      );
+  } else {
+    res.status(200);
+    var id = randomstring.generate({
+      length: config.idlength || 7,
+      charset: config.idtype
+    });
+    async function create(title, text) {
+      await title.set(id, title);
+      await body.set(id, text);
+      return id;
+    }
+    var idgen = create(req.query.title, req.query.body);
+    res.end(
+      '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
+    );
+  }
+});
+app.delete("/delete", (req, res) => {
+  if (req.query.password !== config.password) {
     res
       .status(403)
       .json(
