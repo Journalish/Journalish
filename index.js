@@ -65,9 +65,8 @@ app.post("/create", (req, res) => {
     async function create(title, text) {
       await title.set(id, title);
       await body.set(id, text);
-      return id;
     }
-    var idgen = create(req.query.title, req.query.body);
+    create(req.query.title, req.query.body);
     res.end(
       '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
     );
@@ -82,18 +81,13 @@ app.delete("/delete", (req, res) => {
       );
   } else {
     res.status(200);
-    var id = randomstring.generate({
-      length: config.idlength || 7,
-      charset: config.idtype
-    });
-    async function create(title, text) {
-      await title.set(id, title);
-      await body.set(id, text);
-      return id;
+    async function remove() {
+      await title.delete(req.query.id);
+      await body.delete(req.query.id);
     }
-    var idgen = create(req.query.title, req.query.body);
+    remove();
     res.end(
-      '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
+      '{"success": true, "error": null, "code": "OK", "result": "Deleted."}'
     );
   }
 });
