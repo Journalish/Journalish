@@ -1,5 +1,5 @@
 ### Create ("/create")
-Method: POST
+Method: `POST` <br>
 Paramaters:
 - "password" - Contains the password for the journal (Required)
 - "body" - Contains the Text of the journal entry
@@ -7,10 +7,10 @@ Paramaters:
 
 On success, the ID will be stored under "result"
 ### Find ("find")
-Method: POST
+Method: `POST` <br>
 Paramaters: 
 - "password" - Contains the password of the journal
 - "id" - Conatins the ID of the journal entry
 
 On success, It should return something like this:
-`{"title" : "Title"`
+`{"title" : "Title", "body": "Body", id: "id"}`

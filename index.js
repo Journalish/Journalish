@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/views/index.html");
 });
 
-app.post("/find", (req, res) => {
+app.get("/find", (req, res) => {
   if (!req.query.title || !req.query.body) {
     res
       .status(403)
@@ -61,7 +61,7 @@ app.post("/create", (req, res) => {
       return id;
     }
     var idgen = create(req.query.title, req.query.body);
-    res.json(
+    res.end(
       '{"success": true, "error": null, "code": "OK", "result": "' + id + '"}'
     );
   }

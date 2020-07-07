@@ -7,8 +7,8 @@ Take back your privacy and prevent snooping (somewhat)
 One of my teachers didn't respect my privacy and went through my "rude" journal.
 
 ### How does it store notes?
-I was going to use [Jsoning](https://support.glitch.com/t/jsoning-a-simple-key-value-json-based-persistent-lightweight-database/24575),em-and-a-database/answer/Christian-Smith-2).
-It currently uses [keyv](https://www.npmjs.com/package/keyv), which allows 6 diffrent databases instead of files.
+I was going to use [Jsoning](https://support.glitch.com/t/jsoning-a-simple-key-value-json-based-persistent-lightweight-database/24575), but I don't like parsing, storing JSON.
+It currently uses [keyv](https://www.npmjs.com/package/keyv), which allows 6 diffrent databases.
 
 ### Databases
 You can place the Connection URL at config.js under `dburl`
